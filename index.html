@@ -29,7 +29,8 @@
     .topbar { height: 82px; display: flex; align-items: center; border-bottom: 1px solid var(--line); }
     .nav { display: flex; justify-content: space-between; align-items: center; width: 100%; }
     .brand { display: flex; align-items: center; gap: 12px; }
-    .brandmark { width: 39px; height: 39px; display: grid; place-items: center; color: var(--ink); background: var(--green); border-radius: 50%; font-family: var(--serif); font-size: 17px; }
+    .brandmark { width: 42px; height: 42px; display: grid; place-items: center; color: var(--ink); background: var(--green); border-radius: 50%; }
+    .brandmark svg { width: 35px; height: 35px; }
     .brandname { font-size: 12px; font-weight: 800; letter-spacing: .1em; line-height: 1.4; }
     .brandname span { display: block; color: var(--muted); font-size: 9px; font-weight: 600; letter-spacing: .23em; }
     .navlinks { display: flex; align-items: center; gap: 34px; color: #d7d9d0; font-size: 12px; }
@@ -56,6 +57,9 @@
     .n1 { left: 18%; top: 23%; }.n2 { right: 11%; top: 42%; }.n3 { left: 26%; bottom: 17%; }.n4 { right: 27%; bottom: 8%; }
     .artlabel { position: absolute; z-index: 2; padding: 10px 12px; border: 1px solid rgba(241,238,228,.2); background: rgba(20,23,19,.82); color: #e5e6de; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
     .labelone { right: 0; top: 17%; }.labeltwo { left: 2%; bottom: 25%; }
+    .community-scene { position: relative; width: min(100%, 455px); height: 455px; margin: auto; overflow: hidden; border: 1px solid rgba(199,243,107,.42); border-radius: 48% 48% 4px 4px; background: #24291f; box-shadow: 0 0 90px rgba(199,243,107,.08); }
+    .community-scene svg { display: block; width: 100%; height: 100%; }
+    .scene-caption { position: absolute; left: 18px; bottom: 17px; color: var(--paper); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; }
     .proof { padding: 25px 0; border-bottom: 1px solid var(--line); }
     .proofrow { display: flex; justify-content: space-between; gap: 20px; color: #b7b9b0; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
     .proofrow span { display: flex; align-items: center; gap: 10px; }
@@ -126,6 +130,7 @@
       .hero { min-height: auto; }.hero-inner { display: block; padding: 72px 0 55px; }
       .hero h1 { max-width: 500px; font-size: clamp(54px, 16vw, 76px); }
       .hero p { max-width: 390px; }.orbitart { position: absolute; right: -205px; top: 130px; width: 360px; height: 360px; opacity: .27; transform: scale(.9); pointer-events: none; }
+      .community-scene { width: 100%; height: 355px; margin-top: 38px; border-radius: 46% 46% 4px 4px; }
       .artlabel { display: none; }.hero-copy { position: relative; z-index: 2; }
       .proofrow { flex-wrap: wrap; justify-content: flex-start; column-gap: 22px; row-gap: 14px; font-size: 9px; }
       .section { padding: 78px 0; }.sectionhead { display: block; margin-bottom: 33px; }.sectionhead p { margin-top: 19px; }
@@ -143,7 +148,7 @@
   <header class="topbar">
     <div class="wrap nav">
       <a class="brand" href="#home" aria-label="God's Plan Networks home">
-        <span class="brandmark">G</span>
+        <span class="brandmark" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="1.4"/><text x="9" y="41" fill="currentColor" font-family="Georgia,serif" font-size="24" font-weight="700">GP</text><path d="M15 13h31m0 0v8m-30 30h31" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="48" cy="13" r="3" fill="currentColor"/><circle cx="47" cy="51" r="3" fill="currentColor"/></svg></span>
         <span class="brandname">GOD'S PLAN<span>NETWORKS</span></span>
       </a>
       <button class="menu" type="button" aria-expanded="false" aria-controls="navlinks">MENU</button>
@@ -161,10 +166,30 @@
           <p>Reliable internet and thoughtful network solutions for the places where life and work happen. Built around people, backed by care.</p>
           <div class="actions"><a class="button" href="#contact">Let's talk about your network</a><a class="textlink" href="#services">Explore services</a></div>
         </div>
-        <div class="orbitart" aria-hidden="true"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="core">G</div><i class="node n1"></i><i class="node n2"></i><i class="node n3"></i><i class="node n4"></i><span class="artlabel labelone">Made for the way you work</span><span class="artlabel labeltwo">A stronger signal, together</span></div>
+        <div class="community-scene" role="img" aria-label="A Turkana pastoralist man and woman smiling as they browse online together near Lodwar">
+          <svg viewBox="0 0 460 455" xmlns="http://www.w3.org/2000/svg">
+            <rect width="460" height="455" fill="#24291f"/><circle cx="356" cy="92" r="45" fill="#d9a45d"/>
+            <path d="M0 234Q92 163 180 225T350 205T460 214V455H0Z" fill="#384332"/><path d="M0 279Q93 230 190 276T360 253T460 269V455H0Z" fill="#526047"/>
+            <path d="M23 253v-66m0 17-17-18m17 4 19-22m-19 9-2-30m362 80v-83m0 19-20-19m20 8 22-23m-22 14v-29" stroke="#252c22" stroke-width="8" stroke-linecap="round"/>
+            <path d="M67 268q15-10 30 0m13-5q12-7 24 0m228-6q15-10 30 0" fill="none" stroke="#282e24" stroke-width="6" stroke-linecap="round"/>
+            <path d="M87 307c1-38 26-65 63-65s63 26 64 65v60H87Z" fill="#697d58"/><path d="M112 256q37-34 75 0l-8 24h-59Z" fill="#b77f4e"/>
+            <ellipse cx="150" cy="211" rx="37" ry="46" fill="#754a35"/><path d="M114 205q3-43 41-46 30 1 39 35-17-8-29-23-14 20-51 34" fill="#20231d"/>
+            <path d="M133 218q7 5 13 0m13 0q7 5 13 0m-25 18q11 9 22 0" fill="none" stroke="#211e1a" stroke-width="3" stroke-linecap="round"/>
+            <path d="M127 259q22 18 46 0m-51 8q26 18 56 0m-61 8q31 18 66 0" fill="none" stroke="#d8aa57" stroke-width="4" stroke-linecap="round"/>
+            <path d="M242 306c1-39 26-66 64-66s64 27 65 66v61H242Z" fill="#bb6848"/><path d="M259 254q42-35 82 2l-10 25h-62Z" fill="#d88654"/>
+            <ellipse cx="307" cy="211" rx="38" ry="46" fill="#80503a"/><path d="M270 205q4-42 40-46 30 1 39 35-17-8-29-23-14 20-50 34" fill="#211f1a"/>
+            <path d="M289 218q7 5 13 0m14 0q7 5 13 0m-25 18q11 9 22 0" fill="none" stroke="#211e1a" stroke-width="3" stroke-linecap="round"/>
+            <path d="M284 259q23 18 47 0m-53 8q27 18 57 0m-62 8q32 18 67 0" fill="none" stroke="#e5bd64" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="280" cy="278" r="3" fill="#db7058"/><circle cx="292" cy="282" r="3" fill="#87a96a"/><circle cx="306" cy="284" r="3" fill="#e9d6a3"/><circle cx="320" cy="282" r="3" fill="#db7058"/><circle cx="334" cy="278" r="3" fill="#87a96a"/>
+            <path d="M176 315q54-22 107 0l-8 88H183Z" fill="#30372c"/><path d="M183 331h93l-10 63h-72Z" fill="#d3d0bf"/>
+            <path d="M204 347h52v35h-52Z" fill="#8c9e70"/><path d="M230 350v29m-23-14h47" stroke="#c7f36b" stroke-width="2"/>
+            <path d="M0 410q115-16 230 0t230 0v45H0Z" fill="#171a16"/><text x="26" y="43" fill="#c7f36b" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">CONNECTED IN LODWAR</text>
+            <circle cx="397" cy="318" r="5" fill="#c7f36b"/><circle cx="417" cy="337" r="3" fill="#c7f36b"/><circle cx="395" cy="354" r="3" fill="#c7f36b"/><path d="M397 318 417 337 395 354" fill="none" stroke="#c7f36b" stroke-width="1.5" opacity=".7"/>
+          </svg><span class="scene-caption">Good connections bring us closer</span>
+        </div>
       </div>
     </section>
-    <div class="proof"><div class="wrap proofrow"><span><i></i> People first support</span><span><i></i> Carefully planned installs</span><span><i></i> Home and business networks</span><span><i></i> Proudly serving Kenya</span></div></div>
+    <div class="proof"><div class="wrap proofrow"><span><i></i> People first support</span><span><i></i> Carefully planned installs</span><span><i></i> Home and business networks</span><span><i></i> Based in Lodwar, Turkana</span></div></div>
     <section class="section" id="services">
       <div class="wrap">
         <div class="sectionhead"><div><div class="eyebrow">What we do</div><h2>Connection that<br>does more for you.</h2></div><p>From a single home to a growing business, we make getting connected feel clear, considered and dependable.</p></div>
@@ -192,7 +217,7 @@
     </section>
     <section class="section contact" id="contact">
       <div class="wrap contactgrid">
-        <div class="contactcopy"><div class="eyebrow">Let's get connected</div><h2>Tell us what you're looking for.</h2><p>Ask a question, request a quote or simply start a conversation. We'll take it from there.</p><div class="contactdetails"><div><span>Call us</span><a href="tel:+254700000000">+254 700 000 000</a></div><div><span>Write to us</span><a href="mailto:hello@godsplannetworks.co.ke">hello@godsplannetworks.co.ke</a></div><div><span>Based in</span><strong>Kenya</strong></div></div></div>
+        <div class="contactcopy"><div class="eyebrow">Let's get connected</div><h2>Tell us what you're looking for.</h2><p>Ask a question, request a quote or simply start a conversation. We'll take it from there.</p><div class="contactdetails"><div><span>Call us</span><a href="tel:+254725455574">0725455574</a></div><div><span>Write to us</span><a href="mailto:godsplannetworks2025@gmail.com">godsplannetworks2025@gmail.com</a></div><div><span>Based in</span><strong>Lodwar, Turkana</strong></div></div></div>
         <form class="form" id="contactform">
           <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Name" required></div>
           <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" autocomplete="tel" placeholder="+254" required></div>
@@ -204,7 +229,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="wrap footrow"><a class="brand" href="#home"><span class="brandmark">G</span><span class="brandname">GOD'S PLAN<span>NETWORKS</span></span></a><span>© <span id="year"></span> GOD'S PLAN NETWORKS</span><div class="footlinks"><a href="#services">Services</a><a href="#about">Our story</a><a href="#contact">Contact</a></div></div></footer>
+  <footer class="footer"><div class="wrap footrow"><a class="brand" href="#home"><span class="brandmark" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="1.4"/><text x="9" y="41" fill="currentColor" font-family="Georgia,serif" font-size="24" font-weight="700">GP</text><path d="M15 13h31m0 0v8m-30 30h31" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="48" cy="13" r="3" fill="currentColor"/><circle cx="47" cy="51" r="3" fill="currentColor"/></svg></span><span class="brandname">GOD'S PLAN<span>NETWORKS</span></span></a><span>© <span id="year"></span> GOD'S PLAN NETWORKS</span><div class="footlinks"><a href="#services">Services</a><a href="#about">Our story</a><a href="#contact">Contact</a></div></div></footer>
   <div class="notice" id="notice" role="status" aria-live="polite"></div>
   <script>
     const menu = document.querySelector('.menu');
@@ -228,7 +253,7 @@
       const notice = document.getElementById('notice');
       notice.textContent = 'Your email app will open with your enquiry ready to send.';
       notice.classList.add('show');
-      window.location.href = 'mailto:hello@godsplannetworks.co.ke?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:godsplannetworks2025@gmail.com?subject=' + subject + '&body=' + body;
       window.setTimeout(() => notice.classList.remove('show'), 5000);
     });
   </script>
