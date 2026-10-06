@@ -227,12 +227,10 @@
       const subject = encodeURIComponent('Website enquiry from ' + data.get('name'));
       const body = encodeURIComponent('Name: ' + data.get('name') + '\nPhone: ' + data.get('phone') + '\nEmail: ' + data.get('email') + '\nInterest: ' + data.get('interest') + '\n\n' + data.get('message'));
       const notice = document.getElementById('notice');
-      notice.textContent = 'Opening Gmail with your enquiry ready to send.';
+      notice.textContent = 'Opening a new Gmail draft with your enquiry.';
       notice.classList.add('show');
-      const composeUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent('godsplannetworks2025@gmail.com') + '&su=' + subject + '&body=' + body;
-      const composeWindow = window.open(composeUrl, '_blank');
-      if (composeWindow) composeWindow.opener = null;
-      else window.location.href = composeUrl;
+      const composeUrl = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=' + encodeURIComponent('godsplannetworks2025@gmail.com') + '&su=' + subject + '&body=' + body;
+      window.location.assign(composeUrl);
       window.setTimeout(() => notice.classList.remove('show'), 5000);
     });
   </script>
