@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#141713">
+  <meta name="description" content="Thoughtful network installation, dependable internet and friendly technical support for homes and businesses in Kenya.">
+  <title>GOD'S PLAN NETWORKS | Better connected, every day</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #141713;
+      --panel: #1b1f19;
+      --paper: #f1eee4;
+      --muted: #a6a99e;
+      --green: #c7f36b;
+      --line: rgba(241, 238, 228, .16);
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ink); color: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1180px, calc(100% - 64px)); margin: 0 auto; }
+    .eyebrow { color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    .topbar { height: 82px; display: flex; align-items: center; border-bottom: 1px solid var(--line); }
+    .nav { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brandmark { width: 39px; height: 39px; display: grid; place-items: center; color: var(--ink); background: var(--green); border-radius: 50%; font-family: var(--serif); font-size: 17px; }
+    .brandname { font-size: 12px; font-weight: 800; letter-spacing: .1em; line-height: 1.4; }
+    .brandname span { display: block; color: var(--muted); font-size: 9px; font-weight: 600; letter-spacing: .23em; }
+    .navlinks { display: flex; align-items: center; gap: 34px; color: #d7d9d0; font-size: 12px; }
+    .navlinks a:hover { color: var(--green); }
+    .navcta { padding: 12px 17px; color: var(--ink); background: var(--green); font-weight: 750; }
+    .menu { display: none; border: 0; background: transparent; color: var(--paper); font-size: 12px; letter-spacing: .1em; }
+    .hero { min-height: 665px; position: relative; overflow: hidden; display: flex; align-items: center; border-bottom: 1px solid var(--line); }
+    .hero:before { content: ''; position: absolute; width: 660px; height: 660px; right: -80px; top: 8px; border: 1px solid rgba(199,243,107,.18); border-radius: 50%; box-shadow: 0 0 0 48px rgba(199,243,107,.025), 0 0 0 100px rgba(199,243,107,.025), 0 0 0 156px rgba(199,243,107,.02); }
+    .hero:after { content: ''; position: absolute; width: 440px; height: 440px; right: 30px; top: 118px; border: 1px solid rgba(199,243,107,.26); border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(199,243,107,.1), transparent 67%); }
+    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr .85fr; align-items: center; gap: 35px; padding: 65px 0 80px; }
+    .hero h1 { max-width: 620px; margin: 23px 0 23px; font: 400 clamp(52px, 7vw, 88px)/.98 var(--serif); letter-spacing: -.055em; }
+    .hero h1 em { color: var(--green); font-weight: 400; }
+    .hero p { max-width: 440px; color: #c1c4b9; font-size: 15px; line-height: 1.8; }
+    .actions { display: flex; align-items: center; gap: 23px; margin-top: 32px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 21px; background: var(--green); color: var(--ink); border: 1px solid var(--green); font-size: 12px; font-weight: 800; transition: transform .2s, background .2s; }
+    .button:hover { transform: translateY(-2px); background: #d7ff8a; }
+    .textlink { color: var(--paper); font-size: 12px; border-bottom: 1px solid rgba(241,238,228,.5); padding: 8px 0; }
+    .orbitart { position: relative; width: min(100%, 455px); height: 455px; margin: auto; }
+    .orbitart .ring { position: absolute; inset: 9%; border: 1px solid rgba(199,243,107,.3); border-radius: 50%; }
+    .orbitart .ring:nth-child(2) { inset: 22%; border-color: rgba(199,243,107,.45); }
+    .orbitart .ring:nth-child(3) { inset: 35%; border-color: rgba(199,243,107,.65); }
+    .orbitart .core { position: absolute; inset: 43%; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: var(--ink); font: 30px var(--serif); box-shadow: 0 0 65px rgba(199,243,107,.28); }
+    .node { position: absolute; z-index: 2; width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 7px rgba(199,243,107,.12); }
+    .n1 { left: 18%; top: 23%; }.n2 { right: 11%; top: 42%; }.n3 { left: 26%; bottom: 17%; }.n4 { right: 27%; bottom: 8%; }
+    .artlabel { position: absolute; z-index: 2; padding: 10px 12px; border: 1px solid rgba(241,238,228,.2); background: rgba(20,23,19,.82); color: #e5e6de; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
+    .labelone { right: 0; top: 17%; }.labeltwo { left: 2%; bottom: 25%; }
+    .proof { padding: 25px 0; border-bottom: 1px solid var(--line); }
+    .proofrow { display: flex; justify-content: space-between; gap: 20px; color: #b7b9b0; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+    .proofrow span { display: flex; align-items: center; gap: 10px; }
+    .proofrow i { width: 6px; height: 6px; display: inline-block; border-radius: 50%; background: var(--green); }
+    section { scroll-margin-top: 25px; }
+    .section { padding: 112px 0; }
+    .sectionhead { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 48px; }
+    h2 { margin: 15px 0 0; font: 400 clamp(38px, 5vw, 60px)/1.05 var(--serif); letter-spacing: -.04em; }
+    .sectionhead p { max-width: 365px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .servicegrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .service { min-height: 290px; padding: 30px; background: var(--ink); transition: background .2s; }
+    .service:hover { background: #1a1e18; }
+    .serviceicon { width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid rgba(199,243,107,.45); border-radius: 50%; color: var(--green); font: 22px var(--serif); }
+    .service h3 { margin: 29px 0 12px; font: 400 24px var(--serif); }
+    .service p { max-width: 300px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .service a { display: inline-block; margin-top: 23px; color: var(--green); font-size: 11px; }
+    .about { background: #1b1f19; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .aboutgrid { display: grid; grid-template-columns: .9fr 1fr; gap: 100px; align-items: center; }
+    .aboutart { min-height: 440px; position: relative; display: grid; place-items: center; overflow: hidden; border: 1px solid rgba(199,243,107,.25); background: radial-gradient(ellipse at center, rgba(199,243,107,.09), transparent 66%); }
+    .aboutart:before,.aboutart:after { content: ''; position: absolute; width: 340px; height: 340px; border: 1px solid rgba(199,243,107,.3); border-radius: 50%; }
+    .aboutart:after { width: 230px; height: 230px; }
+    .aboutart strong { position: relative; z-index: 1; color: var(--green); font: 110px var(--serif); font-weight: 400; }
+    .aboutart span { position: absolute; bottom: 25px; left: 27px; color: var(--muted); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+    .aboutcopy h2 { max-width: 520px; }
+    .aboutcopy p { color: #b8bbb1; font-size: 13px; line-height: 1.9; }
+    .values { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 30px; }
+    .value { padding-top: 17px; border-top: 1px solid var(--line); }
+    .value strong { color: var(--green); font: 19px var(--serif); font-weight: 400; }
+    .value span { display: block; margin-top: 7px; color: var(--muted); font-size: 11px; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+    .step { padding: 25px 23px 0 0; }
+    .stepnum { color: var(--green); font: 16px var(--serif); }
+    .step h3 { margin: 19px 0 10px; font: 400 21px var(--serif); }
+    .step p { color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .contact { background: #1b1f19; border-top: 1px solid var(--line); }
+    .contactgrid { display: grid; grid-template-columns: .85fr 1fr; gap: 90px; }
+    .contactcopy p { max-width: 360px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .contactdetails { margin-top: 34px; display: grid; gap: 18px; }
+    .contactdetails span { color: var(--muted); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+    .contactdetails a,.contactdetails strong { display: block; margin-top: 6px; font-size: 14px; font-weight: 500; }
+    .form { display: grid; grid-template-columns: 1fr 1fr; gap: 19px; }
+    .field { display: grid; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { color: #b5b8ad; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+    .field input,.field textarea,.field select { width: 100%; padding: 14px 13px; border: 1px solid rgba(241,238,228,.2); border-radius: 0; outline: 0; background: #141713; color: var(--paper); font-size: 12px; }
+    .field input:focus,.field textarea:focus,.field select:focus { border-color: var(--green); }
+    .field textarea { min-height: 110px; resize: vertical; }
+    .form .button { cursor: pointer; }
+    .formnote { align-self: center; color: var(--muted); font-size: 10px; }
+    .footer { padding: 29px 0; border-top: 1px solid var(--line); }
+    .footrow { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 10px; }
+    .footlinks { display: flex; gap: 20px; }
+    .footlinks a:hover { color: var(--green); }
+    .notice { position: fixed; z-index: 5; right: 24px; bottom: 24px; max-width: 330px; padding: 17px 20px; border: 1px solid var(--green); background: var(--panel); color: var(--paper); font-size: 13px; line-height: 1.6; box-shadow: 0 12px 35px rgba(0,0,0,.3); display: none; }
+    .notice.show { display: block; }
+    @media(max-width: 850px) {
+      .hero-inner { grid-template-columns: 1fr  .75fr; gap: 0; }
+      .hero:before { right: -250px; }.hero:after { right: -120px; }
+      .orbitart { transform: scale(.8); transform-origin: center; margin-left: -30px; }
+      .aboutgrid,.contactgrid { gap: 50px; }
+      .service { padding: 24px; }
+    }
+    @media(max-width: 650px) {
+      .wrap { width: min(100% - 38px, 520px); }
+      .topbar { height: 70px; }.menu { display: block; }
+      .navlinks { display: none; position: absolute; z-index: 4; left: 0; right: 0; top: 70px; padding: 23px 20px; background: var(--panel); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 20px; }
+      .navlinks.open { display: flex; }.navcta { text-align: center; }
+      .hero { min-height: auto; }.hero-inner { display: block; padding: 72px 0 55px; }
+      .hero h1 { max-width: 500px; font-size: clamp(54px, 16vw, 76px); }
+      .hero p { max-width: 390px; }.orbitart { position: absolute; right: -205px; top: 130px; width: 360px; height: 360px; opacity: .27; transform: scale(.9); pointer-events: none; }
+      .artlabel { display: none; }.hero-copy { position: relative; z-index: 2; }
+      .proofrow { flex-wrap: wrap; justify-content: flex-start; column-gap: 22px; row-gap: 14px; font-size: 9px; }
+      .section { padding: 78px 0; }.sectionhead { display: block; margin-bottom: 33px; }.sectionhead p { margin-top: 19px; }
+      .servicegrid { grid-template-columns: 1fr; }.service { min-height: auto; padding: 27px; }
+      .service h3 { margin-top: 20px; }.aboutgrid,.contactgrid { grid-template-columns: 1fr; gap: 37px; }
+      .aboutart { min-height: 300px; }.aboutart strong { font-size: 82px; }
+      .steps { grid-template-columns: 1fr 1fr; row-gap: 27px; }.step { padding-right: 14px; }
+      .form { grid-template-columns: 1fr; }.field.full { grid-column: auto; }
+      .footrow { flex-wrap: wrap; }.footlinks { order: 3; width: 100%; }
+    }
+    @media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*:before,*:after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="God's Plan Networks home">
+        <span class="brandmark">G</span>
+        <span class="brandname">GOD'S PLAN<span>NETWORKS</span></span>
+      </a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="navlinks">MENU</button>
+      <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+        <a href="#services">Services</a><a href="#about">Our story</a><a href="#process">How it works</a><a href="#contact">Contact</a><a class="navcta" href="#contact">Get connected</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">Connection with purpose</div>
+          <h1>Good things happen when we're <em>connected.</em></h1>
+          <p>Reliable internet and thoughtful network solutions for the places where life and work happen. Built around people, backed by care.</p>
+          <div class="actions"><a class="button" href="#contact">Let's talk about your network</a><a class="textlink" href="#services">Explore services</a></div>
+        </div>
+        <div class="orbitart" aria-hidden="true"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="core">G</div><i class="node n1"></i><i class="node n2"></i><i class="node n3"></i><i class="node n4"></i><span class="artlabel labelone">Made for the way you work</span><span class="artlabel labeltwo">A stronger signal, together</span></div>
+      </div>
+    </section>
+    <div class="proof"><div class="wrap proofrow"><span><i></i> People first support</span><span><i></i> Carefully planned installs</span><span><i></i> Home and business networks</span><span><i></i> Proudly serving Kenya</span></div></div>
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="sectionhead"><div><div class="eyebrow">What we do</div><h2>Connection that<br>does more for you.</h2></div><p>From a single home to a growing business, we make getting connected feel clear, considered and dependable.</p></div>
+        <div class="servicegrid">
+          <article class="service"><div class="serviceicon">01</div><h3>Home internet</h3><p>Steady, dependable internet for calls, study, streaming and all the moments that make a house feel like home.</p><a href="#contact">Find the right fit</a></article>
+          <article class="service"><div class="serviceicon">02</div><h3>Business networks</h3><p>Thoughtfully designed connections that help your team work smoothly, serve customers and keep moving forward.</p><a href="#contact">Plan your setup</a></article>
+          <article class="service"><div class="serviceicon">03</div><h3>Installation and setup</h3><p>Professional installation, router configuration and practical guidance, so everything works as it should from day one.</p><a href="#contact">Book a conversation</a></article>
+          <article class="service"><div class="serviceicon">04</div><h3>WiFi coverage</h3><p>Less guesswork and fewer quiet corners. We help improve signal across the rooms and spaces you rely on.</p><a href="#contact">Improve your coverage</a></article>
+          <article class="service"><div class="serviceicon">05</div><h3>Network support</h3><p>Friendly, straightforward troubleshooting and maintenance to get you back to what matters when a connection falters.</p><a href="#contact">Get some help</a></article>
+          <article class="service"><div class="serviceicon">06</div><h3>CCTV and smart systems</h3><p>Connected security and smart technology designed to complement your network and bring greater peace of mind.</p><a href="#contact">Explore options</a></article>
+        </div>
+      </div>
+    </section>
+    <section class="section about" id="about">
+      <div class="wrap aboutgrid">
+        <div class="aboutart" aria-hidden="true"><strong>GP</strong><span>Rooted in purpose. Built for people.</span></div>
+        <div class="aboutcopy"><div class="eyebrow">A little about us</div><h2>Technology is better when it feels human.</h2><p>GOD'S PLAN NETWORKS is built on a simple belief: a good connection can open doors. It can bring a family closer, help a learner go further and give a business room to grow.</p><p>We bring care and craft to every network we build. That means listening first, explaining things clearly and staying in your corner when you need support.</p><div class="values"><div class="value"><strong>Care comes first</strong><span>We listen before we recommend.</span></div><div class="value"><strong>Work done well</strong><span>We take pride in the details.</span></div></div></div>
+      </div>
+    </section>
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="sectionhead"><div><div class="eyebrow">Simple from the start</div><h2>Four steps to feeling<br>right at home online.</h2></div><p>Getting started should be easy. We keep the conversation open and the next steps clear.</p></div>
+        <div class="steps"><article class="step"><span class="stepnum">01</span><h3>Tell us what you need</h3><p>Share a little about your space, your people and what a good connection means to you.</p></article><article class="step"><span class="stepnum">02</span><h3>We make a plan</h3><p>We talk you through a practical recommendation and answer your questions plainly.</p></article><article class="step"><span class="stepnum">03</span><h3>We get you set up</h3><p>Our team installs and configures your network with care, then checks that it is working well.</p></article><article class="step"><span class="stepnum">04</span><h3>We're here to help</h3><p>Need a hand later? Get in touch and talk to a real person who is ready to help.</p></article></div>
+      </div>
+    </section>
+    <section class="section contact" id="contact">
+      <div class="wrap contactgrid">
+        <div class="contactcopy"><div class="eyebrow">Let's get connected</div><h2>Tell us what you're looking for.</h2><p>Ask a question, request a quote or simply start a conversation. We'll take it from there.</p><div class="contactdetails"><div><span>Call us</span><a href="tel:+254700000000">+254 700 000 000</a></div><div><span>Write to us</span><a href="mailto:hello@godsplannetworks.co.ke">hello@godsplannetworks.co.ke</a></div><div><span>Based in</span><strong>Kenya</strong></div></div></div>
+        <form class="form" id="contactform">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Name" required></div>
+          <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" autocomplete="tel" placeholder="+254" required></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+          <div class="field"><label for="interest">I'm interested in</label><select id="interest" name="interest"><option>Home internet</option><option>Business network</option><option>Installation and setup</option><option>WiFi coverage</option><option>Network support</option><option>CCTV and smart systems</option><option>Something else</option></select></div>
+          <div class="field full"><label for="message">A little more about what you need</label><textarea id="message" name="message" placeholder="Tell us about your space or question"></textarea></div>
+          <button class="button" type="submit">Send your enquiry</button><span class="formnote">Your details are only used to respond to your enquiry.</span>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footrow"><a class="brand" href="#home"><span class="brandmark">G</span><span class="brandname">GOD'S PLAN<span>NETWORKS</span></span></a><span>© <span id="year"></span> GOD'S PLAN NETWORKS</span><div class="footlinks"><a href="#services">Services</a><a href="#about">Our story</a><a href="#contact">Contact</a></div></div></footer>
+  <div class="notice" id="notice" role="status" aria-live="polite"></div>
+  <script>
+    const menu = document.querySelector('.menu');
+    const links = document.querySelector('.navlinks');
+    menu.addEventListener('click', () => {
+      const open = menu.getAttribute('aria-expanded') === 'true';
+      menu.setAttribute('aria-expanded', String(!open));
+      links.classList.toggle('open', !open);
+    });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      links.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactform').addEventListener('submit', event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const data = new FormData(form);
+      const subject = encodeURIComponent('Website enquiry from ' + data.get('name'));
+      const body = encodeURIComponent('Name: ' + data.get('name') + '\nPhone: ' + data.get('phone') + '\nEmail: ' + data.get('email') + '\nInterest: ' + data.get('interest') + '\n\n' + data.get('message'));
+      const notice = document.getElementById('notice');
+      notice.textContent = 'Your email app will open with your enquiry ready to send.';
+      notice.classList.add('show');
+      window.location.href = 'mailto:hello@godsplannetworks.co.ke?subject=' + subject + '&body=' + body;
+      window.setTimeout(() => notice.classList.remove('show'), 5000);
+    });
+  </script>
+</body>
+</html>
